@@ -4,8 +4,9 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, fil
 import requests
 import urllib.parse
 
-ORS_API_KEY = "5b3ce3597851110001cf624817be512ab5bf4e009dbe0b1c0ba578d8"
-BOT_TOKEN = "7669334877:AAE8itnRAdSlltCpmoYebpcfJEvU0aC8TGY"
+import os
+ORS_API_KEY = os.getenv("ORS_API_KEY")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("سلام! مبدا و مقصد رو به شکل «میدان آزادی به تجریش» بنویس.")
